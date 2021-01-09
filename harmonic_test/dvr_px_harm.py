@@ -6,9 +6,6 @@
 #i.e. P(x_i) = e^{-\beta H_ii} / Q, where Q = \sum_i e^{-\beta H_ii} and H is the DVR Hamiltonian matrix
 
 import numpy as np
-import sys
-import os
-sys.path.append('/Users/joshkretchmer/Documents/Kretchmer_Group/projects/rpmd_mapping/my_code')
 import utils
 
 
@@ -44,7 +41,7 @@ Hdvr = Hdvr + np.transpose( np.triu( Hdvr, 1 ) )
 
 #Calculate probability distribution along x
 prob_x[:,1] = np.exp( -beta * np.diag(Hdvr) )
-Q = np.sum( prob_x[:,1] ) * delx
+Q = np.sum( prob_x[:,1] ) * delx #need delx here due to numerical integration of partition function to properly normalize
 prob_x[:,1] = prob_x[:,1] / Q
 
 utils.printarray( prob_x, 'prob_x.dat', True )
