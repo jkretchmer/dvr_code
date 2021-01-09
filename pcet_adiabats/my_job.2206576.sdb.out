@@ -1,0 +1,21 @@
+/var/spool/torque/aux//2206576.sdb
+nid03935
+time (s)=  56
+
+ + --------------------------------------------------------------------------
+ +        Job name: test
+ +          Job Id: 2206576.sdb
+ +          System: hopper
+ +     Queued Time: Thu Sep 13 16:12:16 2012
+ +      Start Time: Thu Sep 13 16:13:00 2012
+ + Completion Time: Thu Sep 13 16:13:58 2012
+ +            User: jkretchm
+ +        MOM Host: nid03935
+ +           Queue: debug
+ +  Req. Resources: other=QSUBPID:17658:hopper01,walltime=00:05:00
+ +  Used Resources: cput=00:00:55,mem=37056kb,vmem=94052kb,walltime=00:00:58
+ +     Acct String: m822
+ +   PBS_O_WORKDIR: /global/homes/j/jkretchm/localization/myversion/exact_new2/pcet_adiabats
+ +     Submit Args: job_run
+ + --------------------------------------------------------------------------
+

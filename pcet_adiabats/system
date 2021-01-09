@@ -1,0 +1,12 @@
+me          1.0
+rcut        2.0
+mx       1836.1
+wx          0.9e-2
+vo          2.3e-3
+yx          0.0
+ms        25539
+ws       2.3221e-4
+mues       -1.0e-3
+mups        0.0
+muep        0.15
+rcut_ep     1.0

@@ -1,0 +1,22 @@
+#PBS -q debug
+#PBS -l mppwidth=1
+#PBS -l walltime=00:05:00
+#PBS -N test
+#PBS -e my_job.$PBS_JOBID.err
+#PBS -o my_job.$PBS_JOBID.out
+#PBS -V
+
+echo $PBS_NODEFILE
+echo `cat $PBS_NODEFILE`
+
+export GMPICONF=nodeinfo/PBS_JOBID
+
+cd $PBS_O_WORKDIR
+
+t1=`date +%s`
+/global/homes/j/jkretchm/localization/myversion/exact_new2/pcet_adiabats/dvr_pcet_adiab > josh.out
+t2=`date +%s`
+
+dt=`echo $t1 $t2 | awk '{print $2-$1}'`
+echo 'time (s)= ' $dt
+
