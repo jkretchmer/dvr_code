@@ -7,7 +7,7 @@
 
 import numpy as np
 import utils
-
+from scipy.linalg import expm
 
 k  = 2.0
 R0 = 1.0
@@ -15,8 +15,10 @@ m  = 1.0
 beta = 1.0
 
 N    = 101 #number of grid points, have the extra 1 to include the min of the potential as a grid point
-xmin = -2.0 #min value of grid along x
-xmax = 4.0 #max value of grid along x
+#xmin = -2.0 #min value of grid along x
+#xmax = 4.0 #max value of grid along x
+xmin = -5.0
+xmax = 5.0
 delx = (xmax - xmin) / (N-1) #grid spacing
 
 
@@ -40,8 +42,9 @@ for i in range(N):
 Hdvr = Hdvr + np.transpose( np.triu( Hdvr, 1 ) )
 
 #Calculate probability distribution along x
-prob_x[:,1] = np.exp( -beta * np.diag(Hdvr) )
+prob_x[:,1] = np.diag( expm( -beta*Hdvr ) )
 Q = np.sum( prob_x[:,1] ) * delx #need delx here due to numerical integration of partition function to properly normalize
 prob_x[:,1] = prob_x[:,1] / Q
 
 utils.printarray( prob_x, 'prob_x.dat', True )
+

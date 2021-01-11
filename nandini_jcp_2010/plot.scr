@@ -1,0 +1,10 @@
+set xtic 1 font 'Helvetica,14'
+set ytic 0.025 font 'Helvetica,14'
+set g
+set xlabel 'R' font 'Helvetica,16'
+set ylabel 'P(R)' font 'Helvetica,16'
+set key font 'Helvetica,14'
+
+p 'prob_x.dat' u 1:2 w l lw 4 lc rgb "black" ti "P(R)",\
+'prob_x_1.dat' u 1:2 w l lw 4 lc rgb "red" ti "P_1(R)",\
+'prob_x_2.dat' u 1:2 w l lw 4 lc rgb "blue" ti "P_2(R)"
